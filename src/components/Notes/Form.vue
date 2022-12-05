@@ -3,15 +3,18 @@
     <textarea
         v-model="note.value"
         placeholder="Введите значение"
+        class="form"
         required
     ></textarea>
-    <TagsList :items="tags" @onItemClick="handleTagClick" />
+    <TagsList :items="tags" @onItemClick="handleTagClick" >
+      <span>{{  }}</span>
+    </TagsList>
     <button class="btn btnPrimary" type="submit">Создать задачу</button>
   </form>
 </template>
 
 <script>
-import TagsList from "@/components/UI/Tags/TagsList";
+import TagsList from "@/components/UI/TagsList";
 export default {
   name: "Form",
   components: {TagsList},
@@ -21,7 +24,21 @@ export default {
         value: "",
         tags: []
       },
-      tags: ["home", "work", "travel"],
+      val: ["home", "work", "travel"],
+      tags: [
+        {
+          name: 'home',
+          active: false
+        },
+        {
+          name: 'work',
+          active: false
+        },
+        {
+          name: 'travel',
+          active: false
+        }
+      ]
     }
   },
   methods: {
@@ -38,7 +55,8 @@ export default {
 </script>
 
 <style lang="scss">
-  textarea {
-    margin-bottom: 0;
-  }
+.form {
+  margin-bottom: 0;
+}
+
 </style>

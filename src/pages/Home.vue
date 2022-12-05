@@ -1,7 +1,7 @@
 <template>
   <h1>Hello Home</h1>
   <Form @onSubmit="handleSubmit" />
-  <List @onRemove="handlerRemove" :items="notes" />
+  <List @onRemove="handleRemove" :items="notes" />
 </template>
 
 <script>
@@ -62,7 +62,7 @@ export default {
       console.log(note)
       this.notes.push(note);
     },
-    handlerRemove(id) {
+    handleRemove(id) {
       const index = this.noteIndex(id)
       this.notes.splice(index, 1)
     },
