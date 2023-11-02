@@ -1,5 +1,4 @@
 <template>
-  <h1>Hello Home</h1>
   <Form @onSubmit="handleSubmit" />
   <List @onRemove="handleRemove" :items="notes" />
 </template>
@@ -16,13 +15,30 @@ export default {
         {
           id: 1,
           title: 'task1',
-          tags: ['home', 'work'],
+          tags: [
+            {
+              id: 1,
+              name: 'home',
+              active: true
+            },
+            {
+              id: 2,
+              name: 'work',
+              active: true
+            },
+          ],
           edit: true
         },
         {
           id: 2,
           title: 'task2',
-          tags: ['travel'],
+          tags: [
+            {
+              id: 3,
+              name: 'travel',
+              active: true
+            }
+          ],
           edit: true
         },
         {

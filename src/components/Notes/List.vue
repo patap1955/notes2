@@ -6,9 +6,7 @@
         <p style="cursor: pointer" @click="$emit('onRemove', note.id)">&#10005</p>
       </div>
       <div class="note-footer">
-        <TagsList isPreview v-if="note.tags && note.tags.length > 0" :items="note.tags" >
-          <span></span>
-        </TagsList>
+        <TagsList isPreview v-if="note.tags && note.tags.length > 0" :items="note.tags" />
       </div>
     </div>
   </div>
