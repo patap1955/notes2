@@ -6,7 +6,7 @@
         class="form"
         required
     ></textarea>
-    <TagsList :items="tags" @onItemClick="handleTagClick" />
+    <TagsList isActive :items="tags" @onItemClick="handleTagClick" />
     <button class="btn btnPrimary" type="submit">Создать задачу</button>
   </form>
 </template>
@@ -57,10 +57,6 @@ export default {
         }
       }
       this.note.tags.push(tag)
-      console.log(this.note.tags)
-
-      // this.note.tags.push(tag)
-      // console.log(this.note.tags)
     },
   }
 }

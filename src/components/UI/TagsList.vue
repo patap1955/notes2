@@ -4,10 +4,10 @@
         class="tag-item"
         v-for="tag in items"
         :key="tag.id"
-        @click="$emit('onItemClick', tag)"
-        :class="{ isPreview: isPreview, isActive: isActive }"
+        @click="$emit('onItemClick', tag), isItemSelected(isActive, $event)"
+        :class="{ isPreview: isPreview}"
     >
-      <span>{{ tag.name }}</span>
+      {{ tag.name }}
     </div>
   </div>
 </template>
@@ -30,8 +30,10 @@ export default {
     }
   },
   methods: {
-    onTagClick() {
-      console.log(123)
+    isItemSelected(isActive, event) {
+      if (isActive) {
+        event.target.classList.toggle('isActive')
+      }
     }
   }
 }
